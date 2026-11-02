@@ -19,7 +19,10 @@ courses:
     summary: Reverse proxy, load balancing, caching, TLS & HTTP/3, rate limiting and WAF – hands-on.
     duration: 2 days
     level: Beginner – Intermediate
-    labs_repo: null               # set to Think-Cube/nginx-labs after the transfer
+    nav_title: NGINX
+    labs_repo: Think-Cube/nginx-labs
+    labs_branch: main
+    labs_dir: labs
 
   - id: sonarqube
     title: SonarQube for DevOps
