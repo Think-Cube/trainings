@@ -1,0 +1,50 @@
+name: Build and publish the trainings site
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "0 4 * * *"          # nightly: pick up lab changes from the course repositories
+  workflow_dispatch:             # "Run workflow" button - e.g. right after updating a lab
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Pull labs from the course repositories
+        run: python scripts/sync_labs.py
+
+      - name: Build
+        run: mkdocs build --strict -f mkdocs.gen.yml
+
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

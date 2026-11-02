@@ -1,0 +1,29 @@
+# Training catalog - single source of truth for the site.
+#
+# Each course with a `labs_repo` gets its lab instructions pulled from GitHub at build time
+# (scripts/sync_labs.py). Courses without one are listed as "coming soon".
+
+courses:
+  - id: aks
+    title: Kubernetes on Microsoft Azure (AKS)
+    nav_title: AKS
+    summary: Build, secure and operate a production-style AKS platform – from container images to GitOps.
+    duration: 3 days
+    level: Intermediate
+    labs_repo: Think-Cube/aks-labs
+    labs_branch: main
+    labs_dir: labs                # folder with LABnn-*/README.md
+
+  - id: nginx
+    title: NGINX in Practice
+    summary: Reverse proxy, load balancing, caching, TLS & HTTP/3, rate limiting and WAF – hands-on.
+    duration: 2 days
+    level: Beginner – Intermediate
+    labs_repo: null               # set to Think-Cube/nginx-labs after the transfer
+
+  - id: sonarqube
+    title: SonarQube for DevOps
+    summary: Automated code review with quality gates in Jenkins, GitHub Actions and Azure DevOps.
+    duration: 2 days
+    level: Intermediate
+    labs_repo: null               # set to Think-Cube/sonarqube-labs after the transfer

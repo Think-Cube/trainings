@@ -1,0 +1,34 @@
+/* Think-Cube colours */
+:root,
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color: #0a2540;
+  --md-primary-fg-color--light: #1f3b5c;
+  --md-primary-fg-color--dark: #061629;
+  --md-accent-fg-color: #1f6fb5;
+}
+
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #0a2540;
+  --md-accent-fg-color: #8cc4ff;
+  --md-typeset-a-color: #5aa8ff;      /* links: readable on the dark background */
+}
+
+[data-md-color-scheme="slate"] .md-typeset .md-button {
+  color: #5aa8ff;
+  border-color: #5aa8ff;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .md-button--primary {
+  color: #fff;
+  background-color: #1f6fb5;
+  border-color: #1f6fb5;
+}
+
+/* course cards: equal height, a little more air */
+.md-typeset .grid.cards > ul > li {
+  display: flex;
+  flex-direction: column;
+}
+.md-typeset .grid.cards > ul > li > :last-child {
+  margin-top: auto;
+}
