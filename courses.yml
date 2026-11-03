@@ -14,6 +14,16 @@ courses:
     labs_branch: main
     labs_dir: labs                # folder with LABnn-*/README.md
 
+  - id: terraform
+    title: Terraform on Microsoft Azure
+    nav_title: Terraform
+    summary: Tested, reviewed and automated Azure infrastructure – azurerm 5, AzAPI 2, modules, terraform test and OIDC pipelines.
+    duration: 2 days
+    level: Beginner – Intermediate
+    labs_repo: Think-Cube/terraform-azure-labs
+    labs_branch: main
+    labs_dir: labs
+
   - id: nginx
     title: NGINX in Practice
     summary: Reverse proxy, load balancing, caching, TLS & HTTP/3, rate limiting and WAF – hands-on.
