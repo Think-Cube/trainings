@@ -29,4 +29,17 @@ courses:
     summary: Automated code review with quality gates in Jenkins, GitHub Actions and Azure DevOps.
     duration: 2 days
     level: Intermediate
-    labs_repo: null               # set to Think-Cube/sonarqube-labs after the transfer
+    nav_title: SonarQube
+    labs_repo: Think-Cube/sonarqube-labs
+    labs_branch: main
+    labs_dir: labs
+
+  - id: argocd
+    title: GitOps with Argo CD
+    summary: Continuous delivery to Kubernetes from Git – Argo CD 3.5, ApplicationSets, multi-cluster and Argo Rollouts.
+    duration: 2 days
+    level: Intermediate
+    nav_title: Argo CD
+    labs_repo: Think-Cube/argocd-labs
+    labs_branch: main
+    labs_dir: labs
